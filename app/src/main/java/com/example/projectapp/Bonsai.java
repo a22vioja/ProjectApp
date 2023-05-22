@@ -22,13 +22,19 @@ public class Bonsai {
     @SerializedName("Login")
     public String login;
 
-    public Bonsai(String name, String id, String height, int price, String category, String login) {
+    @SerializedName("AuxData")
+    public String image;
+
+
+
+    public Bonsai(String name, String id, String height, int price, String category, String login, String image) {
         this.name = name;
         this.id = id;
         this.height = height;
         this.price = price;
         this.category = category;
         this.login = login;
+        this.image = image;
     }
 
   /*  public String info() {
