@@ -8,9 +8,9 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="272dp"
-        android:layout_height="192dp"
-        android:layout_marginBottom="60dp"
+        android:layout_width="300dp"
+        android:layout_height="212dp"
+        android:layout_marginBottom="28dp"
         android:fontFamily="sans-serif-light"
         android:text=" We are a family-based business selling TOP quality Bonsai trees!\n
 Is it only sales? NO! we are more than that.\n
@@ -20,30 +20,31 @@ Do we provide planting and plant care services? Yes, we do!"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="116dp"
-        android:layout_height="41dp"
+        android:layout_width="111dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="4dp"
         android:text="WHO ARE WE?"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="245dp"
-        android:layout_height="324dp"
+        android:layout_width="274dp"
+        android:layout_height="322dp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684"
+        app:layout_constraintVertical_bias="0.688"
         app:srcCompat="@drawable/about" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
