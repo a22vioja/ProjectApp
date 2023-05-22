@@ -20,14 +20,28 @@
 
     <Button
         android:id="@+id/buttonExplore"
-        android:layout_width="161dp"
-        android:layout_height="58dp"
-        android:text="EXPLORE"
+        android:layout_width="278dp"
+        android:layout_height="56dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="EXPLORE Bonsai Garden"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.328"
+        app:layout_constraintVertical_bias="0.197"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonAbout"
+        android:layout_width="161dp"
+        android:layout_height="58dp"
+        android:text="ABOUT US"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonExplore"
+        app:layout_constraintVertical_bias="0.227" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
