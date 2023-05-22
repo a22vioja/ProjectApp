@@ -5,13 +5,12 @@
 This project is based on my friends business company which sells Bonsai trees.
 The idea for the app is to show main page as a welcome screen with the button "Explore Bonsai Garden" which takes the user to Recycler View page 
 where all the Bonsai trees are listed and button "About us" where business owner presents the main activities of their company. 
-This is the skis of an idea:
 
-[]!(skis.png)
+This is the skis of an idea:
+![](skis.png)
 
 This is the main page of my App project:
-
-[]!(main.png)
+![](main.png)
 
 #JSON FILE
 
@@ -40,7 +39,7 @@ Figure 1.1
 
 This is the screenshot of the data in Json file (Figurre 1.2):
 
-[]!(json.png)
+![](json.png)
 
 
 This is en example of an object from the Bonsai class(Figure 2). There are 6 atributes all together 
@@ -103,7 +102,7 @@ Figure 3
         android:layout_height="wrap_content"
         android:textSize="18sp" />
 ```
-[]!(rvi.png)
+![](rvi.png)
 
 This is the link to the relevant commit:
 https://github.com/a22vioja/ProjectApp/commit/0ef65ee22b52c0c644ddde3894c45eda89a5335a
@@ -156,7 +155,7 @@ https://github.com/a22vioja/ProjectApp/commit/8a3a82c5162c1983070326394a3ebde27a
 
 This is the About Page screen:
 
-[]!(aboutPage.png)
+![](aboutPage.png)
 
 This is the implementation of Recycler view in BonsaiPage(Figure 6). BonsaiPage class 
 implements JsonTask to get the data parsed from Json file. RecyclerView implements 
