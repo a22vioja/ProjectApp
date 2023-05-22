@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -45,6 +46,7 @@ public class BonsaiPage extends AppCompatActivity implements JsonTask.JsonTaskLi
 
     @Override
     public void onPostExecute(String json) {
+        Log.d("MainActivity", json);
 
         Gson gson = new Gson();
         Type type = new TypeToken<ArrayList<Bonsai>>() {}.getType();
@@ -52,6 +54,12 @@ public class BonsaiPage extends AppCompatActivity implements JsonTask.JsonTaskLi
         adapter.addData(listOfBonsai);
 
         ArrayList<Bonsai> listOfBonsai = gson.fromJson(json, type);
+        if (listOfBonsai != null) {
+            adapter.addData(listOfBonsai);
+            adapter.notifyDataSetChanged();
+        } else {
+            Log.d("BonsaiPage", "Error: Empty list of Bonsai"); // Provide a relevant error message
+        }
 
         adapter.notifyDataSetChanged();
 

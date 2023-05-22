@@ -32,6 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        Log.d("violeta-bi", String.valueOf(position));
         holder.title.setText(items.get(position).getName());
     }
 
@@ -51,6 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         ViewHolder(View itemView) {
             super(itemView);
+            Log.d("violeta-vh", "VH created");
             itemView.setOnClickListener(this);
             title = itemView.findViewById(R.id.name);
         }
