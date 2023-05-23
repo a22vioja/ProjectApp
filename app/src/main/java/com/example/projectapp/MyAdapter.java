@@ -63,6 +63,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         }
     }
 
+    public void addData(List<Bonsai> newdata){
+        this.items=newdata;//newly added
+    }
     public interface OnClickListener {
         void onClick(Bonsai item);
     }
