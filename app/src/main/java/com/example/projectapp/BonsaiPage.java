@@ -17,6 +17,10 @@ import java.util.Arrays;
 
 import com.example.projectapp.Bonsai;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class BonsaiPage extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a22vioja";
@@ -61,7 +65,7 @@ public class BonsaiPage extends AppCompatActivity implements JsonTask.JsonTaskLi
         adapter.addData(listOfBonsai);
 
         String jsonlOG = gson.toJson(listOfBonsai);
-        /*ArrayList<Bonsai>*/ listOfBonsai = gson.fromJson(json, type);
+        ArrayList<Bonsai> listOfBonsai = gson.fromJson(json, type);
         Log.d("BonsaiPage", "jsonLOG: " + jsonlOG);
         if (listOfBonsai != null) {
             adapter.addData(listOfBonsai);
@@ -72,6 +76,32 @@ public class BonsaiPage extends AppCompatActivity implements JsonTask.JsonTaskLi
         }
 
         adapter.notifyDataSetChanged();
+
+
+        // När vi har ett JSONObjekt kan vi hämta ut dess beståndsdelar
+      /* try {
+            JSONArray a = new JSONArray(json);
+
+            for(int i=0; i<a.length(); i++ ){
+                // Ditt JSON-objekt som Java
+                JSONObject bonsaiJson = a.getJSONObject(i);
+                String name = bonsaiJson.getString("name");
+                int price = bonsaiJson.getInt("cost");
+                String size = bonsaiJson.getString("name");
+                String name = bonsaiJson.getString("name");
+                String name = bonsaiJson.getString("name");
+                String name = bonsaiJson.getString("name");
+                Bonsai b = new Bonsai(name, price);
+                listOfBonsai.add(b);
+                Log.d("violeta", "c" + b.getName());
+            }
+
+            adapter.addData(listOfBonsai);
+
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }*/
+
 
     }
 }

@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -34,6 +35,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         Log.d("violeta-bi", String.valueOf(position));
         holder.title.setText(items.get(position).getName());
+        holder.category.setText(items.get(position).getCategory());
+       // holder.size.setText(items.get(position).getSize());
+        holder.image.setImageResource(Integer.parseInt(items.get(position).getImage()));
     }
 
     @Override
@@ -49,12 +53,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title;
+        TextView category;
+
+        ImageView image;
 
         ViewHolder(View itemView) {
             super(itemView);
             Log.d("violeta-vh", "VH created");
             itemView.setOnClickListener(this);
             title = itemView.findViewById(R.id.name);
+            category = itemView.findViewById(R.id.category);
+            image = itemView.findViewById(R.id.image);
         }
 
         @Override

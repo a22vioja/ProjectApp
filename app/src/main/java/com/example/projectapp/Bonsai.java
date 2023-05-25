@@ -1,28 +1,42 @@
 package com.example.projectapp;
 
 import com.google.gson.annotations.SerializedName;
-import android.content.Context;
-import android.view.View;
 
 @SuppressWarnings("WeakerAccess")
 public class Bonsai {
-    @SerializedName("Name")
+    @SerializedName("name")
     public String name;
     @SerializedName("ID")
     public String id;
-    @SerializedName("Size")
+    @SerializedName("size")
     public String height;
 
-    @SerializedName("Cost")
+    @SerializedName("cost")
     public int price;
 
-    @SerializedName("Category")
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    @SerializedName("category")
     public String category;
 
-    @SerializedName("Login")
+    @SerializedName("login")
     public String login;
 
-    @SerializedName("AuxData")
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    @SerializedName("auxdata")
     public String image;
 
 
@@ -35,6 +49,11 @@ public class Bonsai {
         this.category = category;
         this.login = login;
         this.image = image;
+    }
+
+    public Bonsai(String name, int price){
+        this.name = name;
+        this.price = price;
     }
 
   /*  public String info() {
