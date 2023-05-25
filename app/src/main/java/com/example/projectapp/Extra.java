@@ -1,8 +1,12 @@
 package com.example.projectapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Size;
+import android.view.View;
 import android.widget.TextView;
 import com.google.gson.Gson;
 
@@ -13,20 +17,16 @@ public class Extra extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_extra);
+        getSupportActionBar().setTitle(getIntent().getStringExtra("size"));
 
         TextView size = findViewById(R.id.height);
+        size.setText("150 cm");
 
         Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-           // Log.d("violeta", "height"+String.valueOf(tree.getHeight()));
-            String jsonString = extras.getString("json");
-            if (jsonString != null) {
-                Gson gson = new Gson();
-                tree = gson.fromJson(jsonString, Bonsai.class);
-                size.setText(String.valueOf(tree.getHeight()));
-              //  Log.d("violeta", "size"+String.valueOf(size.getText()));
 
-            }
+        if (extras != null) {
+           tree = (Bonsai) getIntent().getSerializableExtra("size");
+           size.setText(tree.getHeight());
         }
     }
 }

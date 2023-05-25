@@ -40,7 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.title.setText(items.get(position).getName());
         holder.category.setText(items.get(position).getCategory());
         //holder.size.setText(items.get(position).getHeight());
-        holder.cost.setText(Integer.toString(items.get(position).getPrice()));
+        holder.cost.setText(Integer.toString(items.get(position).getPrice())+ " kr");
 
         String fileName = items.get(position).getImage();
         int resID = getResId(fileName, R.drawable.class);
@@ -56,7 +56,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             return -1;
         }
     }
-
     @Override
     public int getItemCount() {
         return items.size();

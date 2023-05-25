@@ -16,7 +16,7 @@
         <activity
             android:name=".Extra"
             android:exported="false"
-            android:parentActivityName=".BonsaiPage"/>
+            android:parentActivityName=".BonsaiPage" />
         <activity
             android:name=".About"
             android:exported="false"

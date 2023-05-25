@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -15,6 +18,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.example.projectapp.Bonsai;
 
@@ -23,12 +27,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class BonsaiPage extends AppCompatActivity implements JsonTask.JsonTaskListener {
-
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a22vioja";
 
     ArrayList<Bonsai> listOfBonsai;
     private RecyclerView.ViewHolder holder;
     MyAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,7 @@ public class BonsaiPage extends AppCompatActivity implements JsonTask.JsonTaskLi
         new JsonTask(this).execute(JSON_URL);
 
     }
+
 
     @Override
     public void onPostExecute(String json) {
