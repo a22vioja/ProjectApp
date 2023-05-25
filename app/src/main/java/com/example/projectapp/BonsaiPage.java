@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -36,14 +37,13 @@ public class BonsaiPage extends AppCompatActivity implements JsonTask.JsonTaskLi
 
         listOfBonsai = new ArrayList<Bonsai>();
 
-       /* ArrayList<Bonsai> items = new ArrayList<>(Arrays.asList(
-                new Bonsai("Norvegian","Bonsai1", "20", 2000,"a22vioja", "s", "img_1882" )
-        ));*/
-
-        adapter=new MyAdapter(this, listOfBonsai, new MyAdapter.OnClickListener() {
+        adapter = new MyAdapter(this, listOfBonsai, new MyAdapter.OnClickListener() {
             @Override
             public void onClick(Bonsai item) {
                 Toast.makeText(BonsaiPage.this, item.getName(), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(BonsaiPage.this, Extra.class);
+                startActivity(intent);
             }
         });
 

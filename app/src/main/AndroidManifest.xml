@@ -14,13 +14,17 @@
         android:theme="@style/Theme.ProjectApp"
         tools:targetApi="31">
         <activity
+            android:name=".Extra"
+            android:exported="false"
+            android:parentActivityName=".BonsaiPage"/>
+        <activity
             android:name=".About"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".BonsaiPage"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

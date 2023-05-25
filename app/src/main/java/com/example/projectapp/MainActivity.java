@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 // makes the button in MainActivity page open About page screen
                 Intent intent = new Intent(MainActivity.this, About.class);
                 startActivity(intent);
+
             }
         });
     }

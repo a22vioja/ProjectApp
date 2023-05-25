@@ -1,68 +1,38 @@
 package com.example.projectapp;
 
 import com.google.gson.annotations.SerializedName;
+import java.io.Serializable;
 
 @SuppressWarnings("WeakerAccess")
-public class Bonsai {
+public class Bonsai implements Serializable {
     @SerializedName("name")
     public String name;
     @SerializedName("ID")
     public String id;
-
-    public String getHeight() {
-        return height;
-    }
-
-    public void setHeight(String height) {
-        this.height = height;
-    }
-
     @SerializedName("size")
-    public String height;
-
+    public int height;
     @SerializedName("cost")
     public int price;
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     @SerializedName("category")
     public String category;
-
     @SerializedName("login")
     public String login;
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     @SerializedName("auxdata")
     public String image;
 
 
-
-    public Bonsai(String name, String id, String height, int price, String category, String login, String image) {
+    public Bonsai(String name, String id, int size, int price, String category, String login, String image) {
         this.name = name;
         this.id = id;
-        this.height = height;
+        this.height = size;
         this.price = price;
         this.category = category;
         this.login = login;
         this.image = image;
     }
 
-    public Bonsai(String name, int price){
-        this.name = name;
-        this.price = price;
+    public Bonsai(int size){
+        this.height = size;
     }
 
   /*  public String info() {
@@ -88,27 +58,29 @@ public class Bonsai {
             price = 0;
         }
     */
-    public void setName(String n) {
-        name = n;
-    }
 
     public String getName() {
         return name;
     }
-
     @Override
     public String toString() {
         return name;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
     public int getPrice() {
         return price;
     }
+    public String getImage() {
+        return image;
+    }
 
+    public String getCategory() {
+        return category;
+    }
 
+    public int getHeight() {
+        return height;
+    }
 
 }
 

@@ -26,18 +26,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/height"
+        app:layout_constraintBottom_toTopOf="@+id/price"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/height"
-        android:background="#D2B699"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/price"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/price"

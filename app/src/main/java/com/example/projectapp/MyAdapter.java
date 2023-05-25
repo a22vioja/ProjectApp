@@ -39,17 +39,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         Log.d("violeta-bi", String.valueOf(position));
         holder.title.setText(items.get(position).getName());
         holder.category.setText(items.get(position).getCategory());
-        holder.size.setText(items.get(position).getHeight());
+        //holder.size.setText(items.get(position).getHeight());
         holder.cost.setText(Integer.toString(items.get(position).getPrice()));
 
         String fileName = items.get(position).getImage();
-       // fileName = "img_1884";
         int resID = getResId(fileName, R.drawable.class);
         holder.image.setImageResource(resID);
-
-        //R.drawable.img_1884
-
-
     }
     public static int getResId(String resName, Class<?> c) {
 
@@ -76,14 +71,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title;
         TextView category;
-
-        TextView size;
-
         TextView cost;
-
         ImageView image;
-
-
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -92,7 +81,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             title = itemView.findViewById(R.id.name);
             category = itemView.findViewById(R.id.category);
             image = itemView.findViewById(R.id.image);
-            size = itemView.findViewById(R.id.height);
             cost = itemView.findViewById(R.id.price);
         }
 
