@@ -1,5 +1,7 @@
 package com.example.projectapp;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,8 +39,27 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         Log.d("violeta-bi", String.valueOf(position));
         holder.title.setText(items.get(position).getName());
         holder.category.setText(items.get(position).getCategory());
-       // holder.size.setText(items.get(position).getSize());
-        holder.image.setImageResource(Integer.parseInt(items.get(position).getImage()));
+        holder.size.setText(items.get(position).getHeight());
+        holder.cost.setText(Integer.toString(items.get(position).getPrice()));
+
+        String fileName = items.get(position).getImage();
+       // fileName = "img_1884";
+        int resID = getResId(fileName, R.drawable.class);
+        holder.image.setImageResource(resID);
+
+        //R.drawable.img_1884
+
+
+    }
+    public static int getResId(String resName, Class<?> c) {
+
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 
     @Override
@@ -55,7 +77,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         TextView title;
         TextView category;
 
+        TextView size;
+
+        TextView cost;
+
         ImageView image;
+
+
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -64,6 +92,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             title = itemView.findViewById(R.id.name);
             category = itemView.findViewById(R.id.category);
             image = itemView.findViewById(R.id.image);
+            size = itemView.findViewById(R.id.height);
+            cost = itemView.findViewById(R.id.price);
         }
 
         @Override

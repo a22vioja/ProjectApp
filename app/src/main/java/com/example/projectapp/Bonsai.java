@@ -8,6 +8,15 @@ public class Bonsai {
     public String name;
     @SerializedName("ID")
     public String id;
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
     @SerializedName("size")
     public String height;
 
