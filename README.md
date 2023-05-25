@@ -221,4 +221,4 @@ This is the link to the relevant commit:
 https://github.com/a22vioja/ProjectApp/commit/2562fe745d69edc5b01fac5f5514d1b76340c42e
 
 This is the screen of the BonsaiPage after pressing "Explore Bonsai Garden" button:
-![](.png)
+![](recyclerView.png)
